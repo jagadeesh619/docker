@@ -1,4 +1,4 @@
-network:
+networks:
   default:
     external:
       name: roboshop
