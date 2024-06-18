@@ -14,6 +14,6 @@ RUN echo "hello world" > sample.txt
 WORKDIR /tmp
 RUN echo "hello Docker" > docker.txt
 CMD ["nginx","-g","daemon off;"]
-ARG username
-RUN adduser $username
-USER $username
+# ARG username
+# RUN adduser $username
+# USER $username
