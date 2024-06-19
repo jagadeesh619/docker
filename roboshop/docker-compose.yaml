@@ -3,10 +3,10 @@ networks:
     external:
       name: roboshop
 voulumes:
-  - mongodb
-  - mysql
-  - redis
-  - rabbitmq
+  mongodb:
+  mysql:
+  redis:
+  rabbitmq:
 services:
   # docker run -d --name mongodb --network=roboshop mongodb:1
   mongodb:
