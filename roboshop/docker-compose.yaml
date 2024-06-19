@@ -13,8 +13,8 @@ services:
     image: mongodb:1.0.0
     container_name: mongodb
     volumes:
-      source: mongodb
-      target: 
+    - source: mongodb
+      target: /data/db
       type: volume
     # networks:
     # - roboshop
@@ -38,8 +38,8 @@ services:
     image: redis
     container_name: redis
     volumes:
-      source: redis
-      target: 
+    - source: redis
+      target: /data
       type: volume
 
   cart: 
@@ -52,14 +52,14 @@ services:
     image:  user:1.0.0
     container_name: user
     depends_on:
-    - mongodb
     - redis
+    - mongodb
   mysql:
     image:  mysql:1.0.0
     container_name: mysql
     volumes:
-      source: mongodb
-      target: 
+    - source: mysql
+      target: /var/lib/mysql
       type: volume
   shipping:
     image:  shipping:1.0.0
@@ -73,8 +73,8 @@ services:
     - RABBITMQ_DEFAULT_USER=roboshop
     - RABBITMQ_DEFAULT_PASS=roboshop123
     volumes:
-      source: mongodb
-      target: 
+    - source: rabbitmq
+      target: /var/lib/rabbitmq
       type: volume
 
   payment:
