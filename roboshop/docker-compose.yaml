@@ -2,7 +2,7 @@ networks:
   default:
     external:
       name: roboshop
-voulumes:
+volumes:
   mongodb:
   mysql:
   redis:
